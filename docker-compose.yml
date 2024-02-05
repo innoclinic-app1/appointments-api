@@ -1,0 +1,26 @@
+﻿version: "3.7"
+
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server
+    container_name: sql-server
+    environment:
+      SA_PASSWORD: SA-password
+      ACCEPT_EULA: Y
+    networks:
+      - default
+  
+  app:
+    image: app
+    container_name: app
+    build:
+      context: .
+      dockerfile: src/WebApp/Dockerfile
+    networks:
+      - default
+    ports:
+      - "80:80"
+
+networks:
+  default:
+    driver: bridge
