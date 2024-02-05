@@ -19,7 +19,10 @@ public class AppointmentConfiguration : IEntityTypeConfiguration<Appointment>
         builder.Property(a => a.ServiceId)
             .IsRequired();
         
-        builder.Property(a => a.DateTime)
+        builder.Property(a => a.Date)
+            .IsRequired();
+        
+        builder.Property(a => a.Time)
             .IsRequired();
         
         builder.Property(a => a.IsApproved)
