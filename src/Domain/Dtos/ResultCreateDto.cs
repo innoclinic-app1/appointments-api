@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dtos;
 
-public class ResultCreate
+public class ResultCreateDto
 {
     public int AppointmentId { get; set; }
     public string Complaints { get; set; } = null!;

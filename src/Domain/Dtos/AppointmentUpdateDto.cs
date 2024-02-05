@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dtos;
 
-public class AppointmentCreate
+public class AppointmentUpdateDto
 {
     public int PatientId { get; set; }
     public int DoctorId { get; set; }

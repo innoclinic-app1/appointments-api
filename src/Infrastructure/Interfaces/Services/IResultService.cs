@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Interfaces.Services;
 
-public interface IResultService : IBaseService<Result, ResultCreate, ResultUpdate>
+public interface IResultService : IBaseService<ResultDto, ResultCreateDto, ResultUpdateDto>
 {
     
 }

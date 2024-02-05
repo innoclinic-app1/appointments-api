@@ -1,14 +1,14 @@
 ﻿namespace Infrastructure.Interfaces.Services;
 
-public interface IBaseService<T, in TCreate, in TUpdate>
+public interface IBaseService<TDto, in TCreateDto, in TUpdateDto>
 {
     Task DeleteAsync(int id, CancellationToken cancellation = default);
     
-    Task<T> GetOneAsync(int id, CancellationToken cancellation = default);
+    Task<TDto> GetOneAsync(int id, CancellationToken cancellation = default);
     
-    Task<T> CreateAsync(TCreate create, CancellationToken cancellation = default);
+    Task<TDto> CreateAsync(TCreateDto createDto, CancellationToken cancellation = default);
     
-    Task<T> UpdateAsync(int id, TUpdate update, CancellationToken cancellation = default);
+    Task<TDto> UpdateAsync(int id, TUpdateDto updateDto, CancellationToken cancellation = default);
     
-    Task<ICollection<T>> GetManyAsync(int skip, int take, CancellationToken cancellation = default);
+    Task<ICollection<TDto>> GetManyAsync(int skip, int take, CancellationToken cancellation = default);
 }
